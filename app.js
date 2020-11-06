@@ -1,6 +1,6 @@
 const http = require('http');
 const express = require('express');
-const {port} = require('../config');
+const {port} = require('./config/config');
 const recipesRouter = require('./routes/recipes');
 
 const app = express();
