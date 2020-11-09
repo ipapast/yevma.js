@@ -1,17 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const recipesController = require("../controllers/recipesController.js");
 
-const data = [
-    {id: 1, title: 'Greek style peas in tomato sauce', order: 1, completed: true},
-    {id: 2, title: 'Quick bolognese', order: 2, completed: true },
-    {id: 3, title: 'Lentil soup', order: 3, completed: true},
-    {id: 4, title: 'Burgers', order: 4, completed: false},
-    {id: 5, title: 'Quick pizza', order: 5, completed: false},
-];
-
-router.get('/', function (req, res) {
-    res.status(200).json(data);
-});
+router.get('/', recipesController.findAll);
 
 router.get('/:id', function (req, res) {
     let found = data.find(function (item) {

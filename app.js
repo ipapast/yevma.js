@@ -1,7 +1,19 @@
 const http = require('http');
 const express = require('express');
-const {port} = require('./config/config');
+const {port, url} = require('./config/config');
 const recipesRouter = require('./routes/recipes');
+const moongoose = require("mongoose");
+
+moongoose.Promise = global.Promise;
+moongoose
+    .connect(url)
+    .then(() => {
+        console.log("successfully connected to the database");
+    })
+    .catch(() => {
+        console.log("unable to connect to the database  Exiting now..");
+        process.exit();
+    });
 
 const app = express();
 app.use(express.json());
