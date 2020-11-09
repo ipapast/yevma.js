@@ -3,7 +3,7 @@ services:
   node-app:
     build: .
     ports:
-      - 8000:3000
+      - 3000:3000
     depends_on:
       - mongo
     restart: on-failure
@@ -11,3 +11,5 @@ services:
     image: mongo
     ports:
       - 27018:27017
+    volumes:
+    - /data/db
