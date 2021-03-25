@@ -27,7 +27,7 @@
   "homepage": "https://github.com/ipapast/yevma.js#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongoose": "^5.10.13",
+    "mongoose": "^5.12.2",
     "nodemon": "^2.0.6"
   },
   "devDependencies": {
